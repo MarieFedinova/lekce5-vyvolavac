@@ -41,10 +41,19 @@ function tahnoutJmeno() {
     // Vyřadíme vylosované jméno z osudí
     jmena.splice(vyherniIndex, 1);
     // Výherní jméno si uložíme do pole k ostatním výherním
-    tazenaJmena.push(vyherniJmeno);
+    tazenaJmena.unshift(vyherniJmeno);
     let seznam = document.querySelector('#seznam');
     seznam.innerHTML = tazenaJmena;
 
     let vyherce = document.querySelector('#vyherka');
     vyherce.innerHTML = vyherniJmeno;
+    //počitadlo
+    let počet = tazenaJmena.length;
+    console.log(počet);
+    document.querySelector('#počet').textContent = počet;    
+}
+
+//restartovat vyvolávač
+function obnovitSeznam() {
+        window.location.reload();
 }
